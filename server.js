@@ -1,4 +1,5 @@
-// order of require statements matt er
+// order of require statements matter
+const port = process.env.PORT || 5000
 const app = require('express')()
 const mongoose = require('mongoose')
 const cookieSession = require('cookie-session')
@@ -20,4 +21,6 @@ app.use(passport.initialize())
 app.use(passport.session() )
 require('./routes/authRoutes')(app)
 
-app.listen(5000)
+app.listen(port, () => {
+  console.log(`Listening on port ${port}`)
+})
