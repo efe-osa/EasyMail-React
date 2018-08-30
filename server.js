@@ -8,7 +8,7 @@ require('./models/User')
 require('./services/passport')
 
 //Connection setup to the monogoDb
-mongoose.connect(keys.mongoURI, { useNewUrlParser: true } ) 
+mongoose.connect(keys.mongoURI, { useNewUrlParser: true }) 
 
 app.use(
   cookieSession({
