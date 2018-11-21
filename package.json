@@ -4,18 +4,23 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run client\" \"npm run server\" ",
+  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run bild --prefix client"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
-    "mongoose": "^5.2.10",
+    "mongoose": "^5.2.12",
     "passport": "^0.4.0",
-    "passport-google-oauth20": "^1.0.0"
+    "passport-google-oauth20": "^1.0.0",
+    "stripe": "^6.8.0"
   },
   "devDependencies": {
     "nodemon": "^1.18.4"

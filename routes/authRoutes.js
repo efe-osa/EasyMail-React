@@ -16,7 +16,10 @@ module.exports = (app) => {
     '/auth/google/callback',
     passport.authenticate(
       'google'
-    ) 
+    ), 
+    (req, res) => {
+      res.redirect('/surveys')
+    }
   )
   // logging out
   app.get(
@@ -24,7 +27,7 @@ module.exports = (app) => {
      (req, res) => {
     // .logout() is a function of passport
       req.logout()
-      res.send('You have successfully logged out!')
+      res.redirect('/')
   })
   // Finish line: User gets logged in and retrieve user's info when app is reloaded using .deserializeUser()
   app.get(
