@@ -6,8 +6,9 @@
   "scripts": {
     "server": "nodemon server.js",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run client\" \"npm run server\" ",
-  "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "dev": "concurrently \"npm run client\" \"npm run server\" \"npm run webhook\" ",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client",
+    "webhook": "lt --port 5000 -s easymail"
   },
   "keywords": [],
   "author": "",
@@ -17,12 +18,17 @@
     "concurrently": "^4.0.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.3",
+    "localtunnel": "^1.9.1",
+    "lodash": "^4.17.11",
     "mongoose": "^5.2.12",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^4.2.0",
+    "sendgrid": "^5.2.3",
     "stripe": "^6.8.0"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^0.19.1",
     "nodemon": "^1.18.4"
   }
 }

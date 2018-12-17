@@ -1,5 +1,6 @@
 // order of require statements matter
 require('./models/User')
+require('./models/Survey')
 require('./services/passport')
 const port = process.env.PORT || 5000
 const keys = require('./config/keys')
@@ -25,6 +26,7 @@ app.use(passport.initialize())
 app.use(passport.session() )
 require('./routes/authRoutes')(app)
 require('./routes/billingRoutes')(app)
+require('./routes/surveyRoutes')(app)
 
 if (process.env.NODE_ENV === 'production') {
   //express will serve up prodction assets like our main.js file e.t.c
