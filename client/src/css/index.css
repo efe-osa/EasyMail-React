@@ -1,5 +1,5 @@
 :root {
-  --orange-purple-blend:linear-gradient(160deg, rgba(253, 114, 22, 0.75), rgba(100, 44, 253,0.85)); }
+  --orange-purple-blend:linear-gradient(160deg, rgba(255, 196, 70, 0.75), rgb(255, 126, 21)); }
 
 * {
   margin: 0;
@@ -21,3 +21,9 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   line-height: 1.7;
   min-height: 100vh; }
+
+  .row {
+    padding: 0px 10px;
+    font-size: 18px;
+  }
+

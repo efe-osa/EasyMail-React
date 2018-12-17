@@ -13,7 +13,7 @@ class Nav extends Component {
         return <li><a href="/auth/google">Sign in with Google</a></li>
       default:
         return   [
-            <li key='1'><Payments /></li>,
+            <li key='1' style={{marginRight: '5px'}}><Payments /></li>,
             <li key='2'>Credits: {this.props.auth.credits}</li>,
             <li key='3'>
               <Link to={'/surveys'} >
@@ -27,17 +27,18 @@ class Nav extends Component {
 
   render () {
     return (
-    <nav>
+    <nav className="transparent row">
       <div className="nav-wrapper">
         <Link 
         to={'/'} 
-        className="left-brand-logo">
+        className="black-text">
           Easy-Mail
         </Link>
         <ul className="right">
         { this.renderContent() }
         </ul>
       </div>
+     
     </nav>
     )
   }

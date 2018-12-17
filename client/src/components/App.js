@@ -5,8 +5,8 @@ import * as actions from '../actions'
 
 import Nav from './Nav'
 import Landing from './Landing'
-import Surveys from './Surveys'
-import SurveyNew from './SurveyNew'
+import Dashboard from './Dashboard'
+import SurveyNew from './surveys/SurveyNew'
 
 class App extends Component {
 
@@ -15,13 +15,13 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="container">    
+      <div>    
         <BrowserRouter>
           <div>
             <Nav />
             <Route exact path='/' component={Landing} />
-            <Route exact path='/surveys' component={Surveys} />
-            {/* <Route exact path='/survey/new' component={SurveyNew} /> */}
+            <Route exact path='/surveys' component={Dashboard} />
+            <Route exact path='/survey/new' component={SurveyNew} />
           </div>
         </BrowserRouter>
       </div>
